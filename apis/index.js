@@ -2,6 +2,7 @@ import express from 'express';
 import fs from 'fs'; //modulo de fs para leer y escribir archivos
 import bodyParser from 'body-parser'; //modulo para parsear el body de las peticiones
 
+
 const app = express(); //instancia de express
 
 app.listen(3000, () => { //puerto 3000
@@ -9,10 +10,13 @@ app.listen(3000, () => { //puerto 3000
 });
 
 //crear endpoints
+//un endpoint es una ruta que el servidor escucha y responde a las peticiones
+//en este caso, la ruta es la raiz del servidor
 app.get('/', 
     (req, res) => {    // ruta, peticion, respuesta
   res.send('Hello World!');
 });
+
 
 app.post(
     "/create-user",
